@@ -22,15 +22,14 @@ public class QueryCurrency {
                 .uri(URI.create(direction))
                 .build();
 
-        HttpResponse<String> response = null;
         try {
+            HttpResponse<String> response = null;
             response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
+            return new Gson().fromJson(response.body(), Currency.class);
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-        return new Gson().fromJson(response.body(), Currency.class);
     }
 
     public Currency showCurrencyCodes(){
@@ -42,15 +41,13 @@ public class QueryCurrency {
                 .uri(URI.create(direction))
                 .build();
 
-        HttpResponse<String> response = null;
         try {
+            HttpResponse<String> response = null;
             response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
+            return new Gson().fromJson(response.body(), Currency.class);
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-        return new Gson().fromJson(response.body(), Currency.class);
-        //return new Gson().fromJson(response.body(), Currency.class);
     }
 }

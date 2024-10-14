@@ -1,0 +1,20 @@
+[
+  {
+    "base_code": "ARS",
+    "amountToConvert": 10000.0,
+    "target_code": "USD",
+    "amountConverted": 10.21
+  },
+  {
+    "base_code": "FJD",
+    "amountToConvert": 200.0,
+    "target_code": "CHF",
+    "amountConverted": 77.16
+  },
+  {
+    "base_code": "MMK",
+    "amountToConvert": 45533.0,
+    "target_code": "BDT",
+    "amountConverted": 2595.83633
+  }
+]
