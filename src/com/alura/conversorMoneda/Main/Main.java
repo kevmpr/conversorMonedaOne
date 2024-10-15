@@ -6,9 +6,9 @@ import com.alura.conversorMoneda.Records.HistoryCurrency;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -27,6 +27,7 @@ public class Main {
         Currency currencyCodes = query.showCurrencyCodes();
         ArrayList<ArrayList<String>> listCountrys = currencyCodes.supported_codes();
         ArrayList<HistoryCurrency> listHistoryCurrency = new ArrayList<>();
+        LocalDateTime dateTime = null;
 
         try{
             while(option != 9){
@@ -84,7 +85,7 @@ public class Main {
                             currency.target_code());
 
                     HistoryCurrency historyCurrency = new HistoryCurrency(currency.base_code(), amount,
-                            currency.target_code(), currency.conversion_result());
+                            currency.target_code(), currency.conversion_result(), dateTime.now().toString());
                     listHistoryCurrency.add(historyCurrency);
 
                     sc = new Scanner(System.in);
@@ -100,10 +101,13 @@ public class Main {
                                     Cantidad a convertir: $%f %s
                                     
                                     Moneda a convertir: %s
-                                    Cantidad convertida: $%f %s\n\n
+                                    Cantidad convertida: $%f %s
+                                    
+                                    Fecha y horario de la conversión: %s\n\n
                                     """, i, listHistoryCurrency.get(i).base_code(), listHistoryCurrency.get(i).amountToConvert(),
                                     listHistoryCurrency.get(i).base_code(), listHistoryCurrency.get(i).target_code(),
-                                    listHistoryCurrency.get(i).amountConverted(), listHistoryCurrency.get(i).target_code());
+                                    listHistoryCurrency.get(i).amountConverted(), listHistoryCurrency.get(i).target_code(),
+                                    listHistoryCurrency.get(i).dateTime());
                         }
                     }
 
