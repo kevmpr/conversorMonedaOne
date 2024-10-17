@@ -6,6 +6,7 @@ Les presento mi proyecto de la formación de "java orientado a objetos" de Alura
 ## Construido con 🛠️
 
 * [Java SE 17 & JDK 17](https://docs.oracle.com/en/java/javase/17/docs/api/index.html) - Lenguaje de programación utilizado
+* [ExchangeRate-API](https://www.exchangerate-api.com) - API utilizada
 
 
 ## Autor ✒️
